@@ -51,8 +51,28 @@ body {
   background: linear-gradient(90deg, #00695c, #004d40);
 }
 
+/* Circuit board pattern in background */
+.circuit-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 25% 25%, #00695c 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #00695c 2px, transparent 2px),
+    linear-gradient(#00695c 1px, transparent 1px),
+    linear-gradient(90deg, #00695c 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  z-index: 0;
+}
+
 .profile-header {
   margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-img {
@@ -69,6 +89,7 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 105, 92, 0.3);
+  border: 3px solid white;
 }
 
 .profile-img::after {
@@ -117,9 +138,37 @@ h1 {
 .bio {
   color: #555;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-size: 15px;
   padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.interest-tag {
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+  color: #004d40;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-links {
@@ -127,6 +176,8 @@ h1 {
   justify-content: center;
   gap: 16px;
   margin-top: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-link {
@@ -183,6 +234,31 @@ h1 {
   z-index: 1;
 }
 
+.electronics-icon {
+  position: absolute;
+  color: rgba(0, 105, 92, 0.1);
+  font-size: 24px;
+  z-index: 0;
+}
+
+.icon-1 {
+  top: 20%;
+  left: 10%;
+  transform: rotate(30deg);
+}
+
+.icon-2 {
+  top: 70%;
+  right: 10%;
+  transform: rotate(-20deg);
+}
+
+.icon-3 {
+  bottom: 20%;
+  left: 15%;
+  transform: rotate(15deg);
+}
+
 @media (max-width: 480px) {
   .card {
     padding: 30px 20px;
@@ -204,6 +280,10 @@ h1 {
     width: 46px;
     height: 46px;
   }
+  
+  .interest-tags {
+    gap: 8px;
+  }
 }
 
 /* Animation for page load */
@@ -221,10 +301,55 @@ h1 {
 .card {
   animation: fadeIn 0.8s ease-out;
 }
+
+/* Circuit animation */
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.circuit-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00695c;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+.node-1 {
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.node-2 {
+  top: 60%;
+  right: 25%;
+  animation-delay: 0.5s;
+}
+
+.node-3 {
+  bottom: 40%;
+  left: 30%;
+  animation-delay: 1s;
+}
 </style>
 </head>
 <body>
   <div class="card">
+    <div class="circuit-pattern"></div>
+    
+    <!-- Circuit nodes for animation -->
+    <div class="circuit-node node-1"></div>
+    <div class="circuit-node node-2"></div>
+    <div class="circuit-node node-3"></div>
+    
+    <!-- Electronics icons -->
+    <i class="fas fa-microchip electronics-icon icon-1"></i>
+    <i class="fas fa-bolt electronics-icon icon-2"></i>
+    <i class="fas fa-cog electronics-icon icon-3"></i>
+    
     <div class="profile-header">
       <div class="profile-img">
         <i class="fas fa-user"></i>
@@ -237,7 +362,16 @@ h1 {
       </div>
     </div>
     
-    <p class="bio">Prior Experience in IT Project Operations Management. Passionate about technology, innovation, and creating impactful solutions.</p>
+    <p class="bio">Prior Experience in IT Project Operations Management.</p>
+    
+    <p class="bio">Passionate about technology, innovation, hardware, embedded systems, and creating impactful solutions.</p>
+    
+    <div class="interest-tags">
+      <div class="interest-tag">Hardware</div>
+      <div class="interest-tag">Embedded Systems</div>
+      <div class="interest-tag">Electronics</div>
+      <div class="interest-tag">Innovation</div>
+    </div>
     
     <div class="contact-links">
       <a href="mailto:hakim@example.com" class="contact-link email">
@@ -256,6 +390,7 @@ h1 {
     // Add interactive animations
     document.addEventListener('DOMContentLoaded', function() {
       const contactLinks = document.querySelectorAll('.contact-link');
+      const interestTags = document.querySelectorAll('.interest-tag');
       
       contactLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
@@ -264,6 +399,16 @@ h1 {
         
         link.addEventListener('mouseleave', function() {
           this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+      
+      interestTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-3px)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
         });
       });
     });
