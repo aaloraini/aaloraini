@@ -51,7 +51,6 @@ body {
   background: linear-gradient(90deg, #00695c, #004d40);
 }
 
-/* Circuit board pattern in background */
 .circuit-pattern {
   position: absolute;
   top: 0;
@@ -75,50 +74,35 @@ body {
   z-index: 1;
 }
 
-.profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  background: linear-gradient(135deg, #00695c, #004d40);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 40px;
+.name-container {
   position: relative;
+  margin: 0 auto 20px;
+  padding: 20px 0;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 105, 92, 0.3);
-  border: 3px solid white;
 }
 
-.profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+.name-clean {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #004d40;
+  margin: 0;
+  padding: 0 10px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.5px;
 }
 
-.profile-img::after {
+.name-clean::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(-100%) rotate(45deg);
-  transition: transform 0.5s ease;
-}
-
-.profile-img:hover::after {
-  transform: translateX(100%) rotate(45deg);
-}
-
-h1 {
-  margin: 0 0 8px;
-  color: #004d40;
-  font-weight: 700;
-  font-size: 28px;
-  letter-spacing: -0.5px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #00695c;
+  border-radius: 2px;
 }
 
 .title {
@@ -259,8 +243,8 @@ h1 {
     padding: 30px 20px;
   }
   
-  h1 {
-    font-size: 24px;
+  .name-clean {
+    font-size: 28px;
   }
   
   .title {
@@ -277,7 +261,6 @@ h1 {
   }
 }
 
-/* Animation for page load */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -293,7 +276,6 @@ h1 {
   animation: fadeIn 0.8s ease-out;
 }
 
-/* Circuit animation */
 @keyframes blink {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.7; }
@@ -342,12 +324,9 @@ h1 {
     <i class="fas fa-cog electronics-icon icon-3"></i>
     
     <div class="profile-header">
-      <div class="profile-img">
-        <!-- photo -->
-        <img src="https://imgur.com/a/3CG803Y" alt="Aloraini">
-
+      <div class="name-container">
+        <h1 class="name-clean">Abdulhakim Aloraini</h1>
       </div>
-      <h1>Abdulhakim Aloraini</h1>
       <div class="title">Electrical and Electronics Engineering Student</div>
       <div class="location">
         <i class="fas fa-map-marker-alt"></i>
@@ -377,9 +356,9 @@ h1 {
   </div>
 
   <script>
-    // Add interactive animations
     document.addEventListener('DOMContentLoaded', function() {
       const contactLinks = document.querySelectorAll('.contact-link');
+      const nameElement = document.querySelector('.name-clean');
       
       contactLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
@@ -389,6 +368,16 @@ h1 {
         link.addEventListener('mouseleave', function() {
           this.style.transform = 'translateY(0) scale(1)';
         });
+      });
+      
+      nameElement.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.color = '#00695c';
+      });
+      
+      nameElement.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.color = '#004d40';
       });
     });
   </script>
