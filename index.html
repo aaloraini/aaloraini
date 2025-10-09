@@ -126,11 +126,20 @@ h1 {
   align-items: center;
   justify-content: center;
   color: #666;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
   margin-bottom: 24px;
   font-size: 15px;
 }
 
-.location i {
+.location i, .phone i {
   margin-right: 8px;
   color: #00695c;
 }
@@ -145,30 +154,9 @@ h1 {
   z-index: 1;
 }
 
-.interest-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0 30px;
-  position: relative;
-  z-index: 1;
-}
-
-.interest-tag {
-  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+.bio-bold {
+  font-weight: 600;
   color: #004d40;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.interest-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-links {
@@ -280,10 +268,6 @@ h1 {
     width: 46px;
     height: 46px;
   }
-  
-  .interest-tags {
-    gap: 8px;
-  }
 }
 
 /* Animation for page load */
@@ -360,18 +344,15 @@ h1 {
         <i class="fas fa-map-marker-alt"></i>
         <span>Kuala Lumpur, Malaysia</span>
       </div>
+      <div class="phone">
+        <i class="fas fa-phone"></i>
+        <span>+60 11-6531-4993</span>
+      </div>
     </div>
     
-    <p class="bio">Prior Experience in IT Project Operations Management.</p>
+    <p class="bio bio-bold">Prior Experience in IT Project Operations Management.</p>
     
     <p class="bio">Passionate about technology, innovation, hardware, embedded systems, and creating impactful solutions.</p>
-    
-    <div class="interest-tags">
-      <div class="interest-tag">Hardware</div>
-      <div class="interest-tag">Embedded Systems</div>
-      <div class="interest-tag">Electronics</div>
-      <div class="interest-tag">Innovation</div>
-    </div>
     
     <div class="contact-links">
       <a href="mailto:hakim@example.com" class="contact-link email">
@@ -390,7 +371,6 @@ h1 {
     // Add interactive animations
     document.addEventListener('DOMContentLoaded', function() {
       const contactLinks = document.querySelectorAll('.contact-link');
-      const interestTags = document.querySelectorAll('.interest-tag');
       
       contactLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
@@ -399,16 +379,6 @@ h1 {
         
         link.addEventListener('mouseleave', function() {
           this.style.transform = 'translateY(0) scale(1)';
-        });
-      });
-      
-      interestTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-3px)';
-        });
-        
-        tag.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
         });
       });
     });
