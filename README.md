@@ -16,6 +16,6 @@
 ---
 
 ### Projects
-- [Logic Circuits Simulator](https://apps.apple.com/app/id123456)
+- [Logic Circuits Simulator](https://apps.apple.com/my/app/logic-circuits-simulator/id6748374538)
 - [Portable Vending Machine](https://github.com/aaloraini/portable-vending-machine)
 - [Meal Picker macOS App](https://github.com/aaloraini/meal-picker)
