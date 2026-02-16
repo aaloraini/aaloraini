@@ -1,4 +1,4 @@
-# aaloraini.github.io
+# aaloraini
 
 # Abdulhakim Mohammed Aloraini
 **Electrical and Electronics Engineering Student**
