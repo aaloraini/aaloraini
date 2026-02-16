@@ -1,21 +1,20 @@
-# aaloraini
-
 # Abdulhakim Mohammed Aloraini
-**Electrical and Electronics Engineering Student**
+Electrical & Electronics Engineering Student
 
-📍 Based in Kuala Lumpur  
-🔗 [LinkedIn](https://www.linkedin.com/in/abdulhakim-aloraini/)  
-💼 [GitHub](https://github.com/aaloraini)  
-📧 hkem.moh.ar@gmail.com  
-📱 +60 11-6531-4993  
+Hi, welcome to my GitHub 👋
 
----
+I'm an EEE student.  
+This is where I share projects that I build while learning.
+both for my studies and as personal hobby work.
 
-> *Certified COM professional with experience leading AVL Systems deployment and IoT deployments across GCC.*
+Here, you'll mostly find:
 
----
+- Small engineering-related software tools
+- Digital logic or system design experiments
+- Hobby iOS / macOS apps
+- Hardware-based student projects
+- Utility tools for university use
 
-### Projects
-- [Logic Circuits Simulator](https://apps.apple.com/my/app/logic-circuits-simulator/id6748374538)
-- [Portable Vending Machine](https://github.com/aaloraini/portable-vending-machine)
-- [Meal Picker macOS App](https://github.com/aaloraini/meal-picker)
+Most of the repositories here are learning projects where I try to understand how systems actually work by building them.
+
+Thanks for stopping by.
