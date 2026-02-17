@@ -1,4 +1,4 @@
-# Abdulhakim Mohammed Aloraini
+# Abdulhakim Aloraini
 Electrical & Electronics Engineering Student
 
 Hi, welcome to my GitHub 👋
