@@ -1,6 +1,8 @@
 # Abdulhakim Aloraini
 Electrical & Electronics Engineering Student
 
+🌐 **Portfolio → [aaloraini.github.io](https://aaloraini.github.io)**
+
 Hi, welcome to my GitHub 👋
 
 I'm an EEE student.  
